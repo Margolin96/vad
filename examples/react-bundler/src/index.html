@@ -12,13 +12,14 @@
       box-sizing: border-box;
       min-height: 100vh;
       margin: 0;
-      padding: 10px;
-      background-color: #E5E5E5;
+      background-color: #F1F1F1;
     }
     #playlist {
       list-style: none;
       padding-left: 0;
-      margin: 0;
+      margin: 0 auto;
+      max-width: 500px;
+      padding: 0 10px;
     }
     #playlist li:hover {
       background-color: rgba(255, 0, 0, 0.295);
@@ -46,14 +47,13 @@
     }
 
     .container {
-      margin: 0 auto;
-      max-width: 500px;
+      background-color: #FFF;
+      border-bottom: 1px solid #E5E5E5;
+      position: sticky;
     }
     .wrapper {
-      border-radius: 5px;
-      position: sticky;
-      background-color: #FFF;
-      box-shadow: 0 2px 5px 0 rgba(0,0,0,.1);
+      max-width: 500px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       gap: 10px;

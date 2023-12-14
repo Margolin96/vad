@@ -17,18 +17,20 @@ function App() {
     },
   })
   return (
-    <div className="container">
-      <div className="wrapper">
-        <h1>VAD Demo</h1>
+    <>
+      <div className="container">
+        <div className="wrapper">
+          <h1>VAD Demo</h1>
 
-        <div className="state">
-          <div className="state-running">{vad.listening ? 'RUNNING' : 'STOPPED'}</div>
+          <div className="state">
+            <div className="state-running">{vad.listening ? 'RUNNING' : 'STOPPED'}</div>
 
-          {vad.userSpeaking && <UserSpeaking />}
-          {!vad.userSpeaking && <UserNotSpeaking />}
+            {vad.userSpeaking && <UserSpeaking />}
+            {!vad.userSpeaking && <UserNotSpeaking />}
+          </div>
+
+          <button className="button" onClick={vad.toggle}>Toggle VAD</button>
         </div>
-
-        <button className="button" onClick={vad.toggle}>Toggle VAD</button>
       </div>
 
       <ol id="playlist">
@@ -40,7 +42,7 @@ function App() {
           )
         })}
       </ol>
-    </div>
+    </>
   )
 }
 
