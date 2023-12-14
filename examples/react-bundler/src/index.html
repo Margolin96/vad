@@ -18,22 +18,23 @@
       list-style: none;
       padding-left: 0;
       margin: 0 auto;
-      max-width: 500px;
+      max-width: 400px;
       padding: 0 10px;
-    }
-    #playlist li:hover {
-      background-color: rgba(255, 0, 0, 0.295);
     }
     #playlist li:first-child {
       opacity: 0;
       animation: grow 1s ease-in-out forwards;
     }
     #playlist li {
-      padding: 10px;
+      padding: 5px;
       background: #FFF;
       box-shadow: 0 2px 5px 0 rgba(0,0,0,.1);
       margin: 10px 0;
       border-radius: 5px;
+    }
+    audio {
+      width: 100%;
+      padding: 5px;
     }
     @keyframes grow {
       to {
@@ -52,7 +53,7 @@
       position: sticky;
     }
     .wrapper {
-      max-width: 500px;
+      max-width: 400px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
