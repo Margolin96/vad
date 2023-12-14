@@ -28,9 +28,9 @@ function App() {
             {vad.userSpeaking && <UserSpeaking />}
             {!vad.userSpeaking && <UserNotSpeaking />}
           </div>
-
-          <button className="button" onClick={vad.toggle}>Toggle VAD</button>
         </div>
+
+        <button className="button" onClick={vad.toggle}>{vad.listening ? 'Mute' : 'Unmute'}</button>
       </div>
 
       <ol id="playlist">
