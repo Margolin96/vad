@@ -17,14 +17,18 @@ function App() {
     },
   })
   return (
-    <div style={{ maxWidth: 500, margin: '0 auto' }}>
-      <div style={{ borderRadius: 8, background: '#FFF', boxShadow: '0 2px 5px 0 rgba(0,0,0,.1)', padding: 10 }}>
+    <div className="container">
+      <div className="wrapper">
         <h1>VAD Demo</h1>
-        <button style={{ margin: 10 }} onClick={vad.toggle}>Toggle VAD</button>
-        <div style={{ padding: 10 }}>{vad.listening ? 'VAD is RUNNING' : 'VAD is STOPPED'}</div>
 
-        {vad.userSpeaking && <UserSpeaking />}
-        {!vad.userSpeaking && <UserNotSpeaking />}
+        <div className="state">
+          <div className="state-running">{vad.listening ? 'VAD is RUNNING' : 'VAD is STOPPED'}</div>
+
+          {vad.userSpeaking && <UserSpeaking />}
+          {!vad.userSpeaking && <UserNotSpeaking />}
+        </div>
+
+        <button className="button" onClick={vad.toggle}>Toggle VAD</button>
       </div>
 
       <ol id="playlist">
@@ -41,9 +45,9 @@ function App() {
 }
 
 function UserSpeaking() {
-  return <span style={{ padding: 10, color: "green" }}>user is speaking</span>
+  return <span className="state-speaking">user is speaking</span>
 }
 
 function UserNotSpeaking() {
-  return <span style={{ padding: 10, color: "red" }}>user is not speaking</span>
+  return <span className="state-silent">user is not speaking</span>
 }
