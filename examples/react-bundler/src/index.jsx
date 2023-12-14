@@ -18,16 +18,15 @@ function App() {
   })
   return (
     <div>
-      <h1>Demo of @ricky0123/vad-react</h1>
-      <button onClick={vad.toggle}>Toggle VAD</button>
-      {vad.listening && <div>VAD is running</div>}
-      {!vad.listening && <div>VAD is NOT running</div>}
+      <h1>VAD Demo</h1>
+      <button style={{ margin: 10 }} onClick={vad.toggle}>Toggle VAD</button>
+      {vad.listening ? <div style={{ padding: 10 }}>VAD is running</div> : <div>VAD is NOT running</div>}
       {vad.userSpeaking && <UserSpeaking />}
       {!vad.userSpeaking && <UserNotSpeaking />}
       <ol id="playlist">
         {audioList.map((audioURL) => {
           return (
-            <li key={audioURL.substring(-10)}>
+            <li key={audioURL.substring(-10)} style={{ padding: 10 }}>
               <audio controls src={audioURL} />
             </li>
           )
@@ -38,9 +37,9 @@ function App() {
 }
 
 function UserSpeaking() {
-  return <span style={{ color: "green" }}>user is speaking</span>
+  return <span style={{ padding: 10, color: "green" }}>user is speaking</span>
 }
 
 function UserNotSpeaking() {
-  return <span style={{ color: "red" }}>user is not speaking</span>
+  return <span style={{ padding: 10, color: "red" }}>user is not speaking</span>
 }
