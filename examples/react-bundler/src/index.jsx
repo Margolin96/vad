@@ -22,7 +22,7 @@ function App() {
         <h1>VAD Demo</h1>
 
         <div className="state">
-          <div className="state-running">{vad.listening ? 'VAD is RUNNING' : 'VAD is STOPPED'}</div>
+          <div className="state-running">{vad.listening ? 'RUNNING' : 'STOPPED'}</div>
 
           {vad.userSpeaking && <UserSpeaking />}
           {!vad.userSpeaking && <UserNotSpeaking />}
