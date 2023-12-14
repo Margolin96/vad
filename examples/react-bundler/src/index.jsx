@@ -22,6 +22,8 @@ function App() {
         <div className="wrapper">
           <h1>VAD Demo</h1>
 
+          <button className="button" onClick={vad.toggle}>{vad.listening ? 'Mute' : 'Unmute'}</button>
+
           <div className="state">
             <div className="state-running">{vad.listening ? 'RUNNING' : 'STOPPED'}</div>
 
@@ -29,8 +31,6 @@ function App() {
             {!vad.userSpeaking && <UserNotSpeaking />}
           </div>
         </div>
-
-        <button className="button" onClick={vad.toggle}>{vad.listening ? 'Mute' : 'Unmute'}</button>
       </div>
 
       <ol id="playlist">
@@ -47,9 +47,9 @@ function App() {
 }
 
 function UserSpeaking() {
-  return <span className="state-speaking">user is speaking</span>
+  return <span className="state-speaking">speaking</span>
 }
 
 function UserNotSpeaking() {
-  return <span className="state-silent">user is not speaking</span>
+  return <span className="state-silent">silent</span>
 }
